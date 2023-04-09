@@ -85,6 +85,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF0F1319),
       body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -92,16 +93,51 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
+
                 children: [
-                  Center(child: Text("LOGIN")),
+                  Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 60),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                      Image.asset(
+                      'assets/images/logoassente.png',
+                      width: 156,
+                      height: 44,
+                      fit: BoxFit.fitWidth,
+                      ),
+                      ],
+                    ),
+                  ),
+
                   SizedBox(height: 20),
-                  Text("Email"),
+                  Text("Email",
+                  style: TextStyle(
+                    color: Colors.white
+                  ),
+                  ),
                   TextField(
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(width: 1,color: Colors.white),
+                      ),
+                    ),
                     controller: emailController,
                   ),
                   SizedBox(height: 20),
-                  Text("Password"),
+                  Text("Password",
+                  style: TextStyle(
+                    color: Colors.white
+                  ),),
                   TextField(
+                    style: TextStyle(color: Colors.white),
+                    decoration: InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(width: 1,color: Colors.white),
+                      ),
+                    ),
                     controller: passwordController,
                     obscureText: true,
                   ),
